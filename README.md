@@ -1,0 +1,1 @@
+# nuxt_pos_frontend
