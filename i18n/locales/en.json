@@ -18,7 +18,8 @@
         "role": "Role",
         "permission": "Permission",
         "branch": "Branch",
-        "category": "Category"
+        "category": "Category",
+        "uom": "Unit of Measure"
     },
     "columns": {
         "name": "Name",
