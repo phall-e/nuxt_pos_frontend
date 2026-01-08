@@ -17,7 +17,8 @@
         "user": "User",
         "role": "Role",
         "permission": "Permission",
-        "branch": "Branch"
+        "branch": "Branch",
+        "category": "Category"
     },
     "columns": {
         "name": "Name",
