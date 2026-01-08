@@ -13,6 +13,7 @@
     "of": "Of",
     "menu": {
         "system": "System",
+        "master_data": "Master Data",
         "user": "User",
         "role": "Role",
         "permission": "Permission",
@@ -28,6 +29,13 @@
         "created_at": "Created At",
         "password": "Password",
         "re_password": "Re Password",
-        "is_active": "Is Active"
+        "is_active": "Is Active",
+        "code": "Code",
+        "name_en": "Name (English)",
+        "name_kh": "Name (Khmer)",
+        "manager": "Manager",
+        "address": "Address",
+        "phone_number": "Phone Number",
+        "created_by": "Created By"
     }
 }
