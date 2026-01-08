@@ -1,0 +1,33 @@
+{
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "search": "Search",
+    "create": "Create",
+    "edit": "Edit",
+    "list": "List",
+    "active": "Active",
+    "inactive": "Inactive",
+    "total": "Total",
+    "page": "Page",
+    "of": "Of",
+    "menu": {
+        "system": "System",
+        "user": "User",
+        "role": "Role",
+        "permission": "Permission",
+        "branch": "Branch"
+    },
+    "columns": {
+        "name": "Name",
+        "description": "Description",
+        "action": "Action",
+        "username": "Username",
+        "is_admin": "Is Admin",
+        "status": "Status",
+        "created_at": "Created At",
+        "password": "Password",
+        "re_password": "Re Password",
+        "is_active": "Is Active"
+    }
+}
