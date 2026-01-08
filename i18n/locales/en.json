@@ -19,7 +19,8 @@
         "permission": "Permission",
         "branch": "Branch",
         "category": "Category",
-        "uom": "Unit of Measure"
+        "uom": "Unit of Measure",
+        "product": "Product"
     },
     "columns": {
         "name": "Name",
@@ -38,6 +39,8 @@
         "manager": "Manager",
         "address": "Address",
         "phone_number": "Phone Number",
-        "created_by": "Created By"
+        "created_by": "Created By",
+        "unit_price": "Unit Price",
+        "attachment": "Attachment"
     }
 }

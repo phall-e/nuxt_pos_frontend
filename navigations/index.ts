@@ -20,6 +20,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'uom',
     },
     {
+        title: 'menu.product',
+        icon: 'fa7-solid:list',
+        to: '/master-data/product',
+        moduleName: 'product',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
