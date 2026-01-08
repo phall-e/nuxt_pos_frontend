@@ -1,17 +1,16 @@
 <template>
-
     <TablesMain
-      module-name="category"
+      module-name="uom"
       :page-header-options="{
-        pageTitle: 'menu.category',
+        pageTitle: 'menu.uom',
         breadcrumbs: breadcrumbs
       }"
-      crud-path="admin/master-data/category"
+      crud-path="admin/master-data/uom"
       :headers="headers"
       :table-options="options"
     >
       <template #form="{ formRef }">
-        <CategoryForm :form-ref="formRef"/>
+        <UomForm :form-ref="formRef"/>
       </template>
       <template #item.createdBy="{ item }">
         {{ item?.createdBy.username }}
@@ -27,10 +26,10 @@ import type { Headers } from '~/types/header.type';
 import type { UseCrudOption } from '~/types/UseCrudOption';
 
   definePageMeta({
-    permissions: ['read-category'],
+    permissions: ['read-uom'],
   });
 
-  const breadcrumbs = ['menu.master_data', 'menu.category'];
+  const breadcrumbs = ['menu.master_data', 'menu.uom'];
   const headers: Headers[] = [
     {
       title: 'columns.code',

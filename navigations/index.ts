@@ -14,6 +14,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'category',
     },
     {
+        title: 'menu.uom',
+        icon: 'ph:pencil-ruler-thin',
+        to: '/master-data/uom',
+        moduleName: 'uom',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
