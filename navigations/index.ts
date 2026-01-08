@@ -8,6 +8,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'branch',
     },
     {
+        title: 'menu.category',
+        icon: 'iconamoon:category-bold',
+        to: '/master-data/category',
+        moduleName: 'category',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
