@@ -26,6 +26,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'product',
     },
     {
+        title: 'menu.supplier',
+        icon: 'solar:user-id-outline',
+        to: '/master-data/supplier',
+        moduleName: 'supplier',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
