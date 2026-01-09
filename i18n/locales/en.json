@@ -23,7 +23,9 @@
         "category": "Category",
         "uom": "Unit of Measure",
         "product": "Product",
-        "supplier": "Supplier"
+        "supplier": "Supplier",
+        "purchasing": "Purchasing",
+        "purchase_request": "Purchase Request"
     },
     "columns": {
         "name": "Name",
@@ -45,6 +47,14 @@
         "created_by": "Created By",
         "unit_price": "Unit Price",
         "attachment": "Attachment",
-        "note": "Note"
+        "note": "Note",
+        "items": "Items",
+        "attachments": "Attachments",
+        "request_date": "Request Date",
+        "request_by": "Request By",
+        "total_quantity": "Total Quantity",
+        "choose": "Choose",
+        "quantity": "Quantity",
+        "approved_by": "Approved By"
     }
 }

@@ -32,6 +32,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'supplier',
     },
     {
+        title: 'menu.purchase_request',
+        icon: 'solar:user-id-outline',
+        to: '/purchasing/purchase-request',
+        moduleName: 'purchase-request',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
