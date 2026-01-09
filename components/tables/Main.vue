@@ -119,7 +119,7 @@
       <el-form
         ref="formRef"
         :model="formData"
-        label-position="left"
+        label-position="top"
         label-width="auto"
         @submit.prevent="submit"
       >

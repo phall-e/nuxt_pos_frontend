@@ -10,7 +10,9 @@
     "inactive": "Inactive",
     "total": "Total",
     "page": "Page",
-    "of": "Of",
+    "of": "of",
+    "save": "Save",
+    "cancel": "Cancel",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -20,7 +22,8 @@
         "branch": "Branch",
         "category": "Category",
         "uom": "Unit of Measure",
-        "product": "Product"
+        "product": "Product",
+        "supplier": "Supplier"
     },
     "columns": {
         "name": "Name",
@@ -41,6 +44,7 @@
         "phone_number": "Phone Number",
         "created_by": "Created By",
         "unit_price": "Unit Price",
-        "attachment": "Attachment"
+        "attachment": "Attachment",
+        "note": "Note"
     }
 }
