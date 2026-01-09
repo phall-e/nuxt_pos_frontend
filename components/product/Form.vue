@@ -92,9 +92,20 @@
       clearable
     />
   </el-form-item>
+  <el-form-item
+    :label="$t('columns.attachment')"
+    prop="attachment"
+  >
+    <div>
+      <SingleUpload
+        v-model="formRef.attachment"
+      />
+    </div>
+  </el-form-item>
 </template>
 
 <script lang="ts" setup>
+import SingleUpload from '~/@core/components/SingleUpload.vue';
 import { CrudDialogState } from '~/types/crud-dialog-state.type';
 
   const { formRef } = defineProps({
@@ -110,14 +121,22 @@ import { CrudDialogState } from '~/types/crud-dialog-state.type';
   const dialogState = useCrudDialogStateStore();
 
   // Get product code
-  watch(()=> [dialogState.dialogState], async()=> {
+  const getNextCode = async() => {
     if (dialogState.dialogState === CrudDialogState.CREATE) {
-      const response: any = await useApi('admin/master-data/product/next-code');
-      if (response) {
-        formRef.code = response.payload;
+      try {
+        const response: any = await useApi('admin/master-data/product/next-code');
+        if (response) {
+          formRef.code = response.payload;
+        }
+      } catch (error: any) {
+        useMessage(error, 'error');
       }
     }
-  }, { immediate: true });
+  }
+
+  watchEffect(() => {
+    getNextCode();
+  });
 
 
 </script>
