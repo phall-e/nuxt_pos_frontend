@@ -1,6 +1,6 @@
 <template>
   <el-tag
-    :type="props.status === 'PENDING' ? 'warning' : props.status === 'APPROVED' ? 'info' : props.status === 'PROCESSING' ? 'primary' : props.status === 'COMPLETED' ? 'success' : 'danger'"
+    :type="props.status === 'PENDING' ? 'warning' : props.status === 'APPROVED' ? 'success' : props.status === 'PROCESSING' ? 'primary' : props.status === 'COMPLETED' ? 'success' : 'danger'"
   >
     {{ props.status }}
   </el-tag>

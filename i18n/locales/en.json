@@ -13,6 +13,14 @@
     "of": "of",
     "save": "Save",
     "cancel": "Cancel",
+    "ok": "OK",
+    "approve": "Approve",
+    "are_you_sure": "Are you sure?",
+    "confirm_approve_feature": "Do you want to approve this {feature} ({code})?",
+    "approve_canceled": "Approve canceled",
+    "confirm_delete_file": "Do you want to remove this {fileName}?",
+    "file_deleted_successfully": "The file {fileName} deleted successfully",
+    "delete_canceled": "Delete canceled",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -55,6 +63,7 @@
         "total_quantity": "Total Quantity",
         "choose": "Choose",
         "quantity": "Quantity",
-        "approved_by": "Approved By"
+        "approved_by": "Approved By",
+        "file_name": "File Name"
     }
 }

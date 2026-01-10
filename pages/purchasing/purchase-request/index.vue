@@ -1,6 +1,7 @@
 <template>
 
     <TablesMain
+      ref="tableRef"
       module-name="purchase-request"
       :page-header-options="{
         pageTitle: 'menu.purchase_request',
@@ -27,6 +28,20 @@
       </template>
       <template #item.createdAt="{ item }">
         {{ dateFormatter(item.createdAt) }}
+      </template>
+      <template #item.action-button="{ row, index }">
+        <el-dropdown>
+          <el-tag
+            type="success"
+          >
+            <Icon name="ic:baseline-more-vert"/>
+          </el-tag>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item v-if="row.status === ModuleStatus.PENDING" @click="handleApprove(row, refreshList)">{{ $t('approve') }}</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </template>
     </TablesMain>
 </template>
@@ -111,4 +126,10 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
       fullscreen: true,
     }
   }
+
+  const tableRef = ref<any>(null);
+  const refreshList = () => 
+    tableRef.value?.refreshList();
+ 
+  const { handleApprove } = useApproveCancel('admin/purchasing/purchase-request', 'purchase_request');
 </script>

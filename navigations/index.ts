@@ -33,7 +33,7 @@ const navigationItems: NavigationItem[] = [
     },
     {
         title: 'menu.purchase_request',
-        icon: 'solar:user-id-outline',
+        icon: 'f7:square-list',
         to: '/purchasing/purchase-request',
         moduleName: 'purchase-request',
     },

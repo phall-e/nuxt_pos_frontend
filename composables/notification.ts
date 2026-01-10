@@ -2,6 +2,6 @@ export const useNotification = (message: string, type: 'error' | 'success' | 'pr
   return ElNotification({
     message: message,
     type: type,
-    customClass: 'font-Nokora z-[2000]',
+    customClass: 'font-Nokora z-[2000] !z-[11111111111111111111111111111111111]',
   });
 }

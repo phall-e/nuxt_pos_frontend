@@ -260,12 +260,13 @@
       </el-table>
     </el-tab-pane>
     <el-tab-pane :label="$t('columns.attachments')" name="attachments">
-
+      <DropZone v-model="formRef.attachments"/>
     </el-tab-pane>
   </el-tabs>
 </template>
 
 <script lang="ts" setup>
+import DropZone from '~/@core/components/DropZone.vue';
 import { CrudDialogState } from '~/types/crud-dialog-state.type';
 import statuses from '~/types/Status';
 

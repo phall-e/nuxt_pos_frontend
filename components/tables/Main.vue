@@ -51,9 +51,15 @@
             </template>
           </el-table-column>
         </template>
-        <el-table-column fixed="right" width="150" :label="$t('columns.action')">
+        <el-table-column fixed="right" width="170" :label="$t('columns.action')">
           <template #default="scope">
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center gap-2">
+              <slot
+                name="item.action-button"
+                :row="scope.row"
+                :index="scope.$index"
+              />
+
               <el-tag
                 type="primary"
                 class="cursor-pointer"
@@ -61,7 +67,6 @@
               >
                 <Icon name="carbon:view"/>
               </el-tag>
-              &nbsp;
               <el-tag 
                 v-if="isItemEditable"
                 type="success"
@@ -71,7 +76,6 @@
               >
                 <Icon name="tabler:edit"/>
               </el-tag>
-              &nbsp;
               <el-tag 
                 v-if="isItemRemovable"
                 type="danger"
@@ -388,7 +392,7 @@ const itemDelete = async (id: number) => {
 
 watch(() => [isOpenDialog], () => {
   if (!isOpenDialog.value) {
-    dialogState.setDialogState(CrudDialogState.CREATE);
+    dialogState.setDialogState(CrudDialogState.DEFAULT);
     itemId.value = null;
     formRef.value?.resetFields();
     Object.keys(formData).forEach(key => {
