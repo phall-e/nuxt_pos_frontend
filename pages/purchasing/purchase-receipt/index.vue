@@ -50,7 +50,8 @@
           </el-tag>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-if="row.status === ModuleStatus.PENDING" @click="handleApprove(row, refreshList)">{{ $t('approve') }}</el-dropdown-item>
+              <el-dropdown-item v-can="'approve-purchase-receipt'" v-if="row.status === ModuleStatus.PENDING" @click="handleApprove(row, refreshList)">{{ $t('approve') }}</el-dropdown-item>
+              <el-dropdown-item v-can="'cancel-purchase-receipt'" v-if="row.status === ModuleStatus.PENDING" @click="handleCancel(row, refreshList)">{{ $t('cancel') }}</el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
@@ -170,5 +171,5 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
   const refreshList = () => 
     tableRef.value?.refreshList();
  
-  const { handleApprove } = useApproveCancel('admin/purchasing/purchase-receipt', 'purchase_receipt');
+  const { handleApprove, handleCancel } = useApproveCancel('admin/purchasing/purchase-receipt', 'purchase_receipt');
 </script>
