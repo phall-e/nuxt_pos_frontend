@@ -55,10 +55,10 @@ import { ModuleStatus } from '~/types/Status';
 import type { UseCrudOption } from '~/types/UseCrudOption';
 
   definePageMeta({
-    permissions: ['read-supplier'],
+    permissions: ['read-purchase-order'],
   });
 
-  const breadcrumbs = ['menu.master_data', 'menu.supplier'];
+  const breadcrumbs = ['menu.purchasing', 'menu.purchase_order'];
   const headers: Headers[] = [
     {
       title: 'columns.code',

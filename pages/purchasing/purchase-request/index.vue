@@ -52,10 +52,10 @@ import { ModuleStatus } from '~/types/Status';
 import type { UseCrudOption } from '~/types/UseCrudOption';
 
   definePageMeta({
-    permissions: ['read-supplier'],
+    permissions: ['read-purchase-request'],
   });
 
-  const breadcrumbs = ['menu.master_data', 'menu.supplier'];
+  const breadcrumbs = ['menu.purchasing', 'menu.purchase_request'];
   const headers: Headers[] = [
     {
       title: 'columns.code',
