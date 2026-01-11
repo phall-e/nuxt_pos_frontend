@@ -34,6 +34,39 @@ export const useApproveCancel = (url: string, feature: string) => {
     })
   }
 
-  return { handleApprove }
+  const handleCancel = async (item: any, refreshList: Function) => {
+    ElMessageBox.prompt(
+      `${$t('confirm_cancel_feature', { code: item.code , feature: $t(`menu.${feature}`)})}`,
+      $t('are_you_sure'),
+      {
+        confirmButtonText: $t('ok'),
+        cancelButtonText: $t('cancel'),
+      })
+      .then( async({ value }) => {
+        try {
+          const response = await useApi(`${config.public.apiBaseUrl}${url}/cancel/${item.id}`, {
+            method: 'post',
+            body: {
+              reason: value,
+            }
+          });
+          if (response) {
+            await refreshList();
+          }
+        } catch (error: any) {
+          const message =
+            error?.data?.message ||
+            error?.message ||
+            'Something went wrong'
+
+          useNotification(message, 'error');
+        } 
+      })
+      .catch(() => {
+        useMessage($t('cancel_item_canceled'), 'info');
+      })
+  }
+
+  return { handleApprove, handleCancel }
 
 }
