@@ -426,7 +426,7 @@ import statuses from '~/types/Status';
             Object.assign(formRef, {
               requestedById: response.payload.createdById,
               attachments: response.payload.attachments ? response.payload.attachments : [],
-              description: response.payload.desrciption,
+              description: response.payload.description,
               items: response.payload.items?.length
                 ? response.payload.items.map((item: any) => ({
                     ...item,
