@@ -33,7 +33,8 @@
         "product": "Product",
         "supplier": "Supplier",
         "purchasing": "Purchasing",
-        "purchase_request": "Purchase Request"
+        "purchase_request": "Purchase Request",
+        "purchase_order": "Purchase Order"
     },
     "columns": {
         "name": "Name",
@@ -64,6 +65,9 @@
         "choose": "Choose",
         "quantity": "Quantity",
         "approved_by": "Approved By",
-        "file_name": "File Name"
+        "file_name": "File Name",
+        "order_date": "Order Date",
+        "total_amount": "Total Amount",
+        "request_number": "Request Number"
     }
 }

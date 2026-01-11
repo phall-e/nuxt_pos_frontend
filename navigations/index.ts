@@ -38,6 +38,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'purchase-request',
     },
     {
+        title: 'menu.purchase_order',
+        icon: 'lsicon:shopping-cart-outline',
+        to: '/purchasing/purchase-order',
+        moduleName: 'purchase-order',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

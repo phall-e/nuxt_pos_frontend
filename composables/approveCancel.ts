@@ -15,7 +15,7 @@ export const useApproveCancel = (url: string, feature: string) => {
     )
     .then( async() => {
       try {
-        const response = await useApi(`${config.public.apiBaseUrl}${url}/${item.id}`, {
+        const response = await useApi(`${config.public.apiBaseUrl}${url}/approve/${item.id}`, {
           method: 'post',
         });
         if (response) {
