@@ -44,6 +44,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'purchase-order',
     },
     {
+        title: 'menu.purchase_receipt',
+        icon: 'ph:invoice',
+        to: '/purchasing/purchase-receipt',
+        moduleName: 'purchase-receipt',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

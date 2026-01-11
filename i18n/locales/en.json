@@ -34,7 +34,8 @@
         "supplier": "Supplier",
         "purchasing": "Purchasing",
         "purchase_request": "Purchase Request",
-        "purchase_order": "Purchase Order"
+        "purchase_order": "Purchase Order",
+        "purchase_receipt": "Purchase Receipt"
     },
     "columns": {
         "name": "Name",
@@ -68,6 +69,14 @@
         "file_name": "File Name",
         "order_date": "Order Date",
         "total_amount": "Total Amount",
-        "request_number": "Request Number"
+        "request_number": "Request Number",
+        "receipt_date": "Receipt Date",
+        "ordered_by": "Ordered By",
+        "receipt_ref": "Receipt Ref",
+        "total_discount": "Total Discount",
+        "total_net_amount": "Total Net Amount",
+        "discount": "Discount",
+        "net_amount": "Net Amount",
+        "order_number": "Order Number"
     }
 }
