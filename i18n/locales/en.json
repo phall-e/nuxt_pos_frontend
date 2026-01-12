@@ -23,6 +23,7 @@
     "file_deleted_successfully": "The file {fileName} deleted successfully",
     "delete_canceled": "Delete canceled",
     "cancel_item_canceled": "Cancel Item canceled",
+    "no_data": "No data available",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -37,7 +38,12 @@
         "purchasing": "Purchasing",
         "purchase_request": "Purchase Request",
         "purchase_order": "Purchase Order",
-        "purchase_receipt": "Purchase Receipt"
+        "purchase_receipt": "Purchase Receipt",
+        "stocking": "Stocking",
+        "stock": "Stock",
+        "stock_in": "Stock In",
+        "stock_adjustment": "Stock Adjustment",
+        "stock_transfer": "Stock Transfer"
     },
     "columns": {
         "name": "Name",
@@ -79,6 +85,10 @@
         "total_net_amount": "Total Net Amount",
         "discount": "Discount",
         "net_amount": "Net Amount",
-        "order_number": "Order Number"
+        "order_number": "Order Number",
+        "product_name": "Product Name",
+        "min_stock": "Min Stock",
+        "stock_out": "Stock Out",
+        "stock_onhand": "Stock Onhand"
     }
 }

@@ -50,6 +50,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'purchase-receipt',
     },
     {
+        title: 'menu.stock',
+        icon: 'lucide:store',
+        to: '/stocking/stock',
+        moduleName: 'stock',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
