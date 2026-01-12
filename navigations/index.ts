@@ -56,6 +56,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'stock',
     },
     {
+        title: 'menu.stock_in',
+        icon: 'hugeicons:shopping-cart-check-in-02',
+        to: '/stocking/stock-in',
+        moduleName: 'stock-in',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

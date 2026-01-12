@@ -89,6 +89,10 @@
         "product_name": "Product Name",
         "min_stock": "Min Stock",
         "stock_out": "Stock Out",
-        "stock_onhand": "Stock Onhand"
+        "stock_onhand": "Stock Onhand",
+        "receipt_by": "Receipt By",
+        "receipt_number": "Receipt Number",
+        "stock_in_quantity": "Stock In Quantity",
+        "stock_in_date": "Stock In Date"
     }
 }
