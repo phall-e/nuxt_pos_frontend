@@ -503,7 +503,7 @@ import statuses from '~/types/Status';
               items: response.payload.items?.length
                 ? response.payload.items.map((item: any) => ({
                     ...item,
-                    unitPrice: item.product?.unitPrice,
+                    unitPrice: item.unitPrice,
                     categoryId: item.product?.categoryId,
                     uomId: item.product?.uomId,
                     discount: 0,
