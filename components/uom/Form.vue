@@ -32,6 +32,18 @@
       clearable
     />
   </el-form-item> 
+  <el-form-item
+    :label="$t('columns.quantity')"
+    prop="quantity"
+    :rules="[{ required: true }]"
+  >
+    <el-input 
+      v-model="formRef.quantity"
+      type="number"
+      :placeholder="$t('columns.quantity')"
+      clearable
+    />
+  </el-form-item> 
 </template>
 
 <script lang="ts" setup>

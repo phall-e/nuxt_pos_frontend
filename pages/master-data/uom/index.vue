@@ -44,6 +44,10 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
       key: 'nameKh',
     },   
     {
+      title: 'columns.quantity',
+      key: 'quantity',
+    }, 
+    {
       title: 'columns.created_by',
       key: 'createdBy',
     }, 
@@ -56,7 +60,7 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
 
   const options: UseCrudOption = {
     defaultCreateValue: {
-      
+      quantity: 1,
     },
     mapEditValue: (data: any) => ({
       ...data,
