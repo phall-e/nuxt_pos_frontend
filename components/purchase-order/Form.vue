@@ -319,7 +319,6 @@
                 v-model="scope.row.unitPrice"
                 type="number"
                 placeholder="0"
-                readonly
               />
             </el-form-item>
           </template>
