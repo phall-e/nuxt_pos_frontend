@@ -62,6 +62,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'stock-in',
     },
     {
+        title: 'menu.stock_adjustment',
+        icon: 'heroicons:adjustments-horizontal-solid',
+        to: '/stocking/stock-adjustment',
+        moduleName: 'stock-adjustment',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

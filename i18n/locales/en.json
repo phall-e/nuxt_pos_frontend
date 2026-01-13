@@ -24,6 +24,7 @@
     "delete_canceled": "Delete canceled",
     "cancel_item_canceled": "Cancel Item canceled",
     "no_data": "No data available",
+    "name_lang": "nameEn",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -93,6 +94,8 @@
         "receipt_by": "Receipt By",
         "receipt_number": "Receipt Number",
         "stock_in_quantity": "Stock In Quantity",
-        "stock_in_date": "Stock In Date"
+        "stock_in_date": "Stock In Date",
+        "adjustment_by": "Adjustment By",
+        "adjustment_date": "Adjustment Date"
     }
 }
