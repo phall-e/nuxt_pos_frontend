@@ -107,6 +107,11 @@
         "adjustment_by": "Adjustment By",
         "adjustment_date": "Adjustment Date",
         "old_password": "Old Password",
-        "new_password": "New Password"
+        "new_password": "New Password",
+        "transfer_date": "Transfer Date",
+        "transfer_by": "Transfer By",
+        "from_branch": "From Branch",
+        "to_branch": "To Branch"
+
     }
 }

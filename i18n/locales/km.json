@@ -107,6 +107,10 @@
         "adjustment_by": "កែសម្រួលដោយ",
         "adjustment_date": "កាលបរិច្ឆេទកែសម្រួល",
         "old_password": "ពាក្យសម្ងាត់ចាស់",
-        "new_password": "ពាក្យសម្ងាត់ថ្មី"
+        "new_password": "ពាក្យសម្ងាត់ថ្មី",
+        "transfer_date": "កាលបរិច្ឆេទផ្ទេរ",
+        "transfer_by": "ផ្ទេរដោយ",
+        "from_branch": "ពីសាខា",
+        "to_branch": "ទៅសាខា"
     }
 }

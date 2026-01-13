@@ -68,6 +68,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'stock-adjustment',
     },
     {
+        title: 'menu.stock_transfer',
+        icon: 'solar:square-transfer-horizontal-outline',
+        to: '/stocking/stock-transfer',
+        moduleName: 'stock-transfer',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',
