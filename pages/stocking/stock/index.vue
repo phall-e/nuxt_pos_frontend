@@ -76,7 +76,7 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
     },
     {
       title: 'menu.stock_adjustment',
-      key: 'stockOut',
+      key: 'stockAdjustment',
     },
     {
       title: 'menu.stock_transfer',
