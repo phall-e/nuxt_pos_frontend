@@ -23,8 +23,17 @@
     "file_deleted_successfully": "The file {fileName} deleted successfully",
     "delete_canceled": "Delete canceled",
     "cancel_item_canceled": "Cancel Item canceled",
+    "logout_successfully": "You're logged out successfully",
+    "your_profile_updated_successfully": "Your profile updated successfully",
+    "your_password_change_successfully": "Your password changed successfully",
     "no_data": "No data available",
     "name_lang": "nameEn",
+    "hello": "Hello",
+    "member_since": "Member Since",
+    "view_profile": "View Profile",
+    "edit_profile": "Edit Profile",
+    "change_password": "Change Password",
+    "logout": "Logout",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -96,6 +105,8 @@
         "stock_in_quantity": "Stock In Quantity",
         "stock_in_date": "Stock In Date",
         "adjustment_by": "Adjustment By",
-        "adjustment_date": "Adjustment Date"
+        "adjustment_date": "Adjustment Date",
+        "old_password": "Old Password",
+        "new_password": "New Password"
     }
 }
