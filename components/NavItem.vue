@@ -6,10 +6,10 @@
     active-class="!text-red-500"
     v-can="`read-${item.moduleName}`"
   >
-    <div class="flex items-center justify-center h-[40px] w-[40px]">
+    <div class="flex items-center justify-center" :class="collapse.isCollapsed ? 'h-[50px] w-[50px]' : 'h-[40px] w-[40px]'">
       <Icon :size="20" :name="item.icon"/>
     </div>
-    <div class="text-[15px]">{{ $t(item.title) }}</div>
+    <div v-if="!collapse.isCollapsed" class="text-[15px]">{{ $t(item.title) }}</div>
   </NuxtLink>
   <NuxtLink
     v-else
@@ -17,10 +17,10 @@
     class="text-white flex items-center"
     active-class="!text-red-500"
   >
-    <div class="flex items-center justify-center h-[40px] w-[40px]">
+    <div class="flex items-center justify-center" :class="collapse.isCollapsed ? 'h-[50px] w-[50px]' : 'h-[40px] w-[40px]'">
       <Icon :size="20" :name="item.icon"/>
     </div>
-    <div class="text-[15px]">{{ $t(item.title) }}</div>
+    <div v-if="!collapse.isCollapsed" class="text-[15px]">{{ $t(item.title) }}</div>
   </NuxtLink>
 </template>
 
@@ -28,4 +28,6 @@
 import type { NavigationItem } from '~/types/NavigationItem';
 
 defineProps<{ item: NavigationItem }>()
+
+const collapse = useCollapseStore();
 </script>

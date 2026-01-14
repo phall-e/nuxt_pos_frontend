@@ -4,7 +4,7 @@
   >
     <el-aside
       class="border-r bg-blue-800"
-      width="250px"
+      :width="collapse.isCollapsed ? '50px' : '250px'"
     >
       <Sidebar/>
     </el-aside>
@@ -13,7 +13,7 @@
         class="border-b flex items-center justify-between bg-white"
       >
         <div>
-          <Icon name="fe:bar"/>
+          <Icon @click="collapse.setCollapse()" class="cursor-pointer" name="fe:bar"/>
         </div>
         <div class="flex items-center gap-4">
           <el-dropdown>
@@ -242,6 +242,7 @@
 <script lang="ts" setup>
   import type { FormInstance } from 'element-plus';
   const auth = useAuthenticationStore();
+  const collapse = useCollapseStore();
 
   const roles = useMasterData<{id: number; name: string}>('admin/system/roles/select-options');
   const branches = useMasterData<{id: number; nameEn: string; nameKh: string}>('admin/master-data/branch/select-options');

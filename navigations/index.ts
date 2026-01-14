@@ -27,7 +27,7 @@ const navigationItems: NavigationItem[] = [
     },
     {
         title: 'menu.product_barcode',
-        icon: 'fa7-solid:list',
+        icon: 'ion:barcode-outline',
         to: '/master-data/product-bar-code',
         moduleName: 'product',
     },
