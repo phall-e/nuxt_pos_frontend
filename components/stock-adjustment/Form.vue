@@ -92,6 +92,7 @@
       <el-form-item
         :label="$t('columns.description')"
         prop="description"
+        :rules="[ { required: true } ]"
       >
         <el-input 
           v-model="formRef.description"
@@ -116,6 +117,7 @@
         :data="formRef.items"
         border
       >
+        <template #empty>{{ $t('no_data') }}</template>
         <el-table-column
           :width="60"
           align="centere"
