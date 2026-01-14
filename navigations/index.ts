@@ -38,6 +38,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'supplier',
     },
     {
+        title: 'menu.customer_type',
+        icon: 'uil:layer-group',
+        to: '/master-data/customer-type',
+        moduleName: 'customer-type',
+    },
+    {
         title: 'menu.purchase_request',
         icon: 'f7:square-list',
         to: '/purchasing/purchase-request',

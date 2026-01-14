@@ -58,7 +58,8 @@
         "stock_in": "Stock In",
         "stock_adjustment": "Stock Adjustment",
         "stock_transfer": "Stock Transfer",
-        "product_barcode": "Product Barcode"
+        "product_barcode": "Product Barcode",
+        "customer_type": "Customer Type"
     },
     "columns": {
         "name": "Name",

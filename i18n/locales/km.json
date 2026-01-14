@@ -58,7 +58,8 @@
         "stock_in": "បញ្ចូលស្តុក",
         "stock_adjustment": "កែសម្រួលស្តុក",
         "stock_transfer": "ផ្ទេរស្តុក",
-        "product_barcode": "បាកូដទំនិញ"
+        "product_barcode": "បាកូដទំនិញ",
+        "customer_type": "ប្រភេទអតិថន"
     },
     "columns": {
         "name": "ឈ្មោះ",
