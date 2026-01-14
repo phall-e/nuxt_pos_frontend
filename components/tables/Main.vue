@@ -9,6 +9,14 @@
         </el-breadcrumb>
       </div>
       <div class="flex items-center justify-end gap-2">
+        <template v-if="pageHeaderOptions?.actions?.length">
+          <el-button
+            v-for="item in pageHeaderOptions?.actions"
+            :key="item.title"
+            :type="item.color"
+            @click="item.onClick"
+          ><Icon :size="20" :name="item.icon"/>&nbsp;{{ $t(item.title) }}</el-button>
+        </template>
         <el-input
           v-if="searchEnabled"
           v-model="metaData.search"

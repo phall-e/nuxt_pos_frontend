@@ -26,7 +26,7 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'product',
     },
     {
-        title: 'menu.product_bar_code',
+        title: 'menu.product_barcode',
         icon: 'fa7-solid:list',
         to: '/master-data/product-bar-code',
         moduleName: 'product',

@@ -7,6 +7,7 @@
     "edit": "Edit",
     "updated": "Updated",
     "created": "Created",
+    "print_barcode": "Print Barcode",
     "successfully": "successfully",
     "list": "List",
     "active": "Active",
@@ -56,7 +57,8 @@
         "stock": "Stock",
         "stock_in": "Stock In",
         "stock_adjustment": "Stock Adjustment",
-        "stock_transfer": "Stock Transfer"
+        "stock_transfer": "Stock Transfer",
+        "product_barcode": "Product Barcode"
     },
     "columns": {
         "name": "Name",
@@ -114,7 +116,8 @@
         "transfer_date": "Transfer Date",
         "transfer_by": "Transfer By",
         "from_branch": "From Branch",
-        "to_branch": "To Branch"
+        "to_branch": "To Branch",
+        "barcode": "Barcode"
 
     }
 }

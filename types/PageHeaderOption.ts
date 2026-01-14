@@ -1,8 +1,8 @@
 export interface IButtonAction {
     title: string
-    variant?: any
-    color?: string
-    disabled?: boolean
+    color: 'primary' | 'info' | 'success' | 'danger',
+    disabled?: boolean,
+    icon: string,
     onClick: () => any
 }
 export interface IPageHeaderOption {
