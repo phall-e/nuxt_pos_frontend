@@ -51,7 +51,7 @@
             </template>
           </el-table-column>
         </template>
-        <el-table-column fixed="right" width="170" :label="$t('columns.action')">
+        <el-table-column v-if="showActionButton" fixed="right" width="170" :label="$t('columns.action')">
           <template #default="scope">
             <div class="flex items-center justify-center gap-2">
               <slot
@@ -196,6 +196,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  showActionButton: {
+    type: Boolean,
+    default: true,
+  }
 });
 
 const {
@@ -207,6 +211,7 @@ const {
   showCreateButton,
   isItemEditable,
   isItemRemovable,
+  showActionButton,
 } = props;
 
 const itemPerPages = ref<number[]>([
@@ -331,6 +336,7 @@ const openDialog = async (isCreating?: boolean, id?: number) =>{
 }
 
 const crudLoading = ref<boolean>(false);
+const { t: $t } = useI18n()
 const submit = () => {
   formRef.value?.validate( async (valid) => {
     if (valid) {
@@ -341,7 +347,14 @@ const submit = () => {
           body: formData,
         });
         if (response) {
-          useNotification(`${$t(pageHeaderOptions?.pageTitle || '') +' is ' + dialogState.dialogState === CrudDialogState.CREATE ? 'inserted' : 'updated'} successfully`);
+          const action =
+            dialogState.dialogState === CrudDialogState.CREATE
+              ? 'inserted'
+              : 'updated';
+
+          useNotification(
+            `${$t(pageHeaderOptions?.pageTitle || '')} ${$t(action)} ${$t('successfully')}`
+          );
           isOpenDialog.value = false;
           loadItem();
         }

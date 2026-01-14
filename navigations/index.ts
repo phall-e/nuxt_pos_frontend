@@ -26,6 +26,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'product',
     },
     {
+        title: 'menu.product_bar_code',
+        icon: 'fa7-solid:list',
+        to: '/master-data/product-bar-code',
+        moduleName: 'product',
+    },
+    {
         title: 'menu.supplier',
         icon: 'solar:user-id-outline',
         to: '/master-data/supplier',
