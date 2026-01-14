@@ -112,6 +112,7 @@
       <el-form-item
         :label="$t('columns.description')"
         prop="description"
+        :rules="{ required: true }"
       >
         <el-input 
           v-model="formRef.description"
@@ -136,6 +137,9 @@
         :data="formRef.items"
         border
       >
+        <template #empty>
+          {{ $t('no_data') }}
+        </template>
         <el-table-column
           :width="60"
           align="centere"
@@ -146,6 +150,7 @@
               plain
               circle
               @click="addItem"
+              size="small"
               :disabled="!formRef.fromBranchId"
             >
               <Icon name="ei:plus"/>
@@ -156,6 +161,7 @@
               type="danger"
               plain
               circle
+               size="small"
               @click="removeItem(scope.$index)"
             >
               <Icon name="material-symbols-light:delete-outline-rounded"/>
