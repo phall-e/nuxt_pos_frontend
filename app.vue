@@ -1,7 +1,7 @@
 <template>
   <div class="font-Nokora">
     <NuxtLayout>
-      <NuxtPage v-if="ready" />
+      <NuxtPage/>
     </NuxtLayout>
   </div>
 </template>
