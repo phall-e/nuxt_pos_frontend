@@ -46,6 +46,7 @@
         class="rounded-sm"
         v-loading="getLoading"
       >
+        <template #empty>{{ $t('no_data') }}</template>
         <el-table-column 
           type="selection"
           width="55"
