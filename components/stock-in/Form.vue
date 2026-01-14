@@ -257,6 +257,7 @@
           :data="formRef.items"
           border
         >
+          <template #empty>{{ $t('no_data') }}</template>
           <el-table-column
             :width="60"
             align="centere"
