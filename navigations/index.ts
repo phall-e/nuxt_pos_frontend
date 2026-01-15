@@ -44,6 +44,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'customer-type',
     },
     {
+        title: 'menu.customer',
+        icon: 'stash:people-group-duotone',
+        to: '/master-data/customer',
+        moduleName: 'customer',
+    },
+    {
         title: 'menu.purchase_request',
         icon: 'f7:square-list',
         to: '/purchasing/purchase-request',

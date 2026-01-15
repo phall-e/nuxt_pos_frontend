@@ -19,6 +19,8 @@
     "cancel": "បោះបង់",
     "ok": "យល់ព្រម",
     "approve": "អនុម័ត",
+    "drop_file_here_or": "ទម្លាក់ឯកសារនៅទីនេះ ឬ",
+    "click_to_upload": "ចុចទីនេះដើម្បីផ្ទុក",
     "are_you_sure": "តើអ្នកប្រាកដឬ?",
     "confirm_approve_feature": "តើអ្នកចង់អនុម័ត {feature}-{code} នេះឬ?",
     "approve_canceled": "ការអនុម័តត្រូវបានបោះបង់",
@@ -59,7 +61,8 @@
         "stock_adjustment": "កែសម្រួលស្តុក",
         "stock_transfer": "ផ្ទេរស្តុក",
         "product_barcode": "បាកូដទំនិញ",
-        "customer_type": "ប្រភេទអតិថន"
+        "customer_type": "ប្រភេទអតិថិជន",
+        "customer": "អតិថិជន"
     },
     "columns": {
         "name": "ឈ្មោះ",
@@ -118,6 +121,7 @@
         "transfer_by": "ផ្ទេរដោយ",
         "from_branch": "ពីសាខា",
         "to_branch": "ទៅសាខា",
-        "barcode": "បាកូដទំនិញ"
+        "barcode": "បាកូដទំនិញ",
+        "picture": "រូបភាព"
     }
 }

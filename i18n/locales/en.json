@@ -19,6 +19,8 @@
     "cancel": "Cancel",
     "ok": "OK",
     "approve": "Approve",
+    "drop_file_here_or": "Drop file here or",
+    "click_to_upload": "Click to upload",
     "are_you_sure": "Are you sure?",
     "confirm_approve_feature": "Do you want to approve this {feature}-{code}?",
     "approve_canceled": "Approve canceled",
@@ -59,7 +61,8 @@
         "stock_adjustment": "Stock Adjustment",
         "stock_transfer": "Stock Transfer",
         "product_barcode": "Product Barcode",
-        "customer_type": "Customer Type"
+        "customer_type": "Customer Type",
+        "customer": "Customer"
     },
     "columns": {
         "name": "Name",
@@ -118,7 +121,8 @@
         "transfer_by": "Transfer By",
         "from_branch": "From Branch",
         "to_branch": "To Branch",
-        "barcode": "Barcode"
+        "barcode": "Barcode",
+        "picture": "Picture"
 
     }
 }

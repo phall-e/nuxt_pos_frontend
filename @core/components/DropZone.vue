@@ -31,7 +31,7 @@
         <div 
           class="el-upload__text"
         >
-          Drop file here or <em>click to upload</em>
+          {{ $t('drop_file_here_or') }} <em>{{ $t('click_to_upload') }}</em>
         </div>
       </div>
     </el-upload>
@@ -39,6 +39,7 @@
       :data="props.modelValue"
       stripe
     >
+      <template #empty>{{ $t('no_data') }}</template>
       <el-table-column :label="$t('columns.file_name')" prop="fileName" />
       <el-table-column :label="$t('columns.action')" align="center" width="150">
         <template #default="scope">
