@@ -1,5 +1,6 @@
 <template>
     <TablesMain
+      ref="tableRef"
       module-name="product"
       :page-header-options="{
         pageTitle: 'menu.product_barcode',
@@ -64,6 +65,18 @@
         />
       </template>
     </TablesMain>
+
+    <!-- Barcode Print Area -->
+    <div ref="printRef" class="print-area">
+      <div v-for="item in selectedIds">
+        <BarcodesGenerating
+          :value="item"
+          :height="60"
+          :display-value="false"
+        />
+        
+      </div>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -73,6 +86,11 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
   definePageMeta({
     permissions: ['read-product'],
   });
+
+  const tableRef = ref<{ itemSelectedIds: number[] } | null>(null)
+
+  const selectedIds = computed(() => tableRef.value?.itemSelectedIds || [])
+
 
   const breadcrumbs = ['menu.master_data', 'menu.product'];
   const headers: Headers[] = [
@@ -138,41 +156,25 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
     }
   }
 
-  const printElement = () => {
-    const content = document.getElementById('label')?.innerHTML
-    if (!content) return
+  const printRef = ref<HTMLElement | null>(null)
 
-    const printWindow = window.open('', '', 'width=100px')
+  const printElement = () => {
+   
+    if (!printRef.value) return
+
+    const content = printRef.value.innerHTML
+
+    const printWindow = window.open('', '', 'width=800,height=600')
     if (!printWindow) return
 
-    printWindow.document.writeln(`
+    printWindow.document.write(`
       <html>
         <head>
           <title>Print</title>
           <style>
-            /* 🔥 THIS controls printer size */
-            @page {
-              size: 50mm 30mm;
-              margin: 0;
-            }
-
             body {
-              width: 50mm;
-              height: 30mm;
-              margin: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-family: Arial, sans-serif;
-            }
-
-            .label {
-              text-align: center;
-            }
-
-            svg {
-              width: 45mm;
-              height: auto;
+              font-family: Arial;
+              padding: 20px;
             }
           </style>
         </head>
@@ -180,12 +182,12 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
           ${content}
         </body>
       </html>
-    `);
+    `)
 
-      printWindow.document.close()
-      printWindow.focus()
-      printWindow.print()
-      // printWindow.close()
+    printWindow.document.close()
+    printWindow.focus()
+    printWindow.print()
+    // printWindow.close()
   }
 </script>
 
