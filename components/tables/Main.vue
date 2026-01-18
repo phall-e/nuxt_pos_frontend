@@ -41,9 +41,12 @@
       class="bg-white rounded-sm border mt-4"
     >
       <el-table
+        ref="multipleTableRef"
         :data="items?.payload.data"
         stripe
         class="rounded-sm"
+        row-key="id"
+        @selection-change="handleSelectChange"
         v-loading="getLoading"
       >
         <template #empty>{{ $t('no_data') }}</template>
@@ -161,7 +164,7 @@
 
 <script lang="ts" setup>
 import { ArrowRight } from '@element-plus/icons-vue';
-import type { FormInstance } from 'element-plus';
+import type { FormInstance, TableInstance } from 'element-plus';
 import { CrudDialogState } from '~/types/crud-dialog-state.type';
 import type { Headers } from '~/types/header.type';
 import type { IPageHeaderOption } from '~/types/PageHeaderOption';
@@ -298,6 +301,15 @@ const refreshList = () => {
   loadItem();
 }
 
+// Select Item
+const multipleTableRef = ref<TableInstance>();
+
+const itemSelectedIds = ref<number[]>([]); 
+  
+const handleSelectChange = (val: any) => {
+  itemSelectedIds.value = val.map((item: any) => item.id);
+}
+
 
 // Create
 const isOpenDialog = ref<boolean>(false);
@@ -425,6 +437,7 @@ watch(() => [isOpenDialog], () => {
 
 defineExpose({ 
   refreshList,
+  itemSelectedIds,
 });
 
 </script>
