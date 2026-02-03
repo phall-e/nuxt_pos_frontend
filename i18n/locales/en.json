@@ -32,6 +32,7 @@
     "logout_successfully": "You're logged out successfully",
     "your_profile_updated_successfully": "Your profile updated successfully",
     "your_password_change_successfully": "Your password changed successfully",
+    "data_inserted": "Data was inserted successfully",
     "no_data": "No data available",
     "name_lang": "nameEn",
     "hello": "Hello",
@@ -40,6 +41,7 @@
     "edit_profile": "Edit Profile",
     "change_password": "Change Password",
     "logout": "Logout",
+    "scanning": "Scanning",
     "menu": {
         "system": "System",
         "master_data": "Master Data",
@@ -62,7 +64,9 @@
         "stock_transfer": "Stock Transfer",
         "product_barcode": "Product Barcode",
         "customer_type": "Customer Type",
-        "customer": "Customer"
+        "customer": "Customer",
+        "saling": "Saling",
+        "sale": "Product Saling"
     },
     "columns": {
         "name": "Name",
@@ -122,7 +126,13 @@
         "from_branch": "From Branch",
         "to_branch": "To Branch",
         "barcode": "Barcode",
-        "picture": "Picture"
-
+        "picture": "Picture",
+        "sale_by": "Sale By",
+        "sale_date": "Sale Date",
+        "total_tax": "Total Tax",
+        "total_paid_amount": "Total Paid Amount",
+        "subtotal": "Subtotal",
+        "grand_total": "Grand Total",
+        "pay_now": "Pay now"
     }
 }

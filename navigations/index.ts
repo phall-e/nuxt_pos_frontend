@@ -92,6 +92,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'stock-transfer',
     },
     {
+        title: 'menu.sale',
+        icon: 'heroicons-outline:currency-dollar',
+        to: '/saling/sale',
+        moduleName: 'sale',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

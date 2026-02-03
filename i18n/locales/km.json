@@ -32,6 +32,7 @@
     "logout_successfully": "អ្នកបានចាក់ចេញពីប្រព័ន្ធដោយជោគជ័យ",
     "your_profile_updated_successfully": "ព័ត៌មានរបស់អ្នកត្រូវបានកែប្រែដោយជោគជ័យ",
     "your_password_change_successfully": "ពាក្យសម្ងាត់របស់អ្នកត្រូវបានផ្លាស់ប្ដូរដោយជោគជ័យ",
+    "data_inserted": "ទិន្នន័យត្រូវបានបញ្ចូលដោយជោគជ័យ",
     "no_data": "មិនមានទិន្នន័យ",
     "name_lang": "nameKh",
     "hello": "សួស្តី",
@@ -40,6 +41,7 @@
     "edit_profile": "កែប្រែព័ត៌មានផ្ទាល់ខ្លួន",
     "change_password": "ផ្លាស់ប្ដូរអក្សរសម្ងាត់",
     "logout": "ចាក់ចេញពីប្រព័ន្ធ",
+    "scanning": "ស្កែន",
     "menu": {
         "system": "ប្រព័ន្ធ",
         "master_data": "ទិន្នន័យមេ",
@@ -62,7 +64,9 @@
         "stock_transfer": "ផ្ទេរស្តុក",
         "product_barcode": "បាកូដទំនិញ",
         "customer_type": "ប្រភេទអតិថិជន",
-        "customer": "អតិថិជន"
+        "customer": "អតិថិជន",
+        "saling": "ការលក់",
+        "sale": "លក់ទំនិញ"
     },
     "columns": {
         "name": "ឈ្មោះ",
@@ -122,6 +126,13 @@
         "from_branch": "ពីសាខា",
         "to_branch": "ទៅសាខា",
         "barcode": "បាកូដទំនិញ",
-        "picture": "រូបភាព"
+        "picture": "រូបភាព",
+        "sale_by": "លក់ដោយ",
+        "sale_date": "កាលបរិច្ឆេទលក់",
+        "total_tax": "ពន្ធសរុប",
+        "total_paid_amount": "ទឹកប្រាក់បានបង់",
+        "subtotal": "សរុប",
+        "grand_total": "សរុបចុងក្រោយ",
+        "pay_now": "ទូទាត់ឥឡូវ"
     }
 }
