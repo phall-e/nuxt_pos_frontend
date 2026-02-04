@@ -66,7 +66,8 @@
         "customer_type": "ប្រភេទអតិថិជន",
         "customer": "អតិថិជន",
         "saling": "ការលក់",
-        "sale": "លក់ទំនិញ"
+        "sale": "លក់ទំនិញ",
+        "sale_payment_receipt": "ទទួលប្រាក់ពីអតិថិជន"
     },
     "columns": {
         "name": "ឈ្មោះ",
@@ -105,7 +106,7 @@
         "ordered_by": "បញ្ជាទិញដោយ",
         "receipt_ref": "លេខយោងបង្កាន់ដៃ",
         "total_discount": "បញ្ចុះតម្លៃសរុប",
-        "total_net_amount": "ចំនួនសុទ្ធសរុប",
+        "total_net_amount": "ប្រាក់សរុបចុងក្រោយ",
         "discount": "បញ្ចុះតម្លៃ",
         "net_amount": "ចំនួនសុទ្ធ",
         "order_number": "លេខបញ្ជាទិញ",
@@ -133,6 +134,9 @@
         "total_paid_amount": "ទឹកប្រាក់បានបង់",
         "subtotal": "សរុប",
         "grand_total": "សរុបចុងក្រោយ",
-        "pay_now": "ទូទាត់ឥឡូវ"
+        "pay_now": "ទូទាត់ឥឡូវ",
+        "invoice": "លេខវិក្ក័យប័ត្រ",
+        "amount": "ទឹកប្រាក់",
+        "payment_history": "ប្រវត្តិបង់ប្រាក់"
     }
 }

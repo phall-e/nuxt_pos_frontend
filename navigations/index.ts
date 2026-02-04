@@ -98,6 +98,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'sale',
     },
     {
+        title: 'menu.sale_payment_receipt',
+        icon: 'mdi:invoice-text-edit-outline',
+        to: '/saling/sale-payment-receipt',
+        moduleName: 'sale-payment-receipt',
+    },
+    {
         title: 'menu.user',
         icon: 'mynaui:user',
         to: '/system/user',

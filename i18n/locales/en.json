@@ -66,7 +66,8 @@
         "customer_type": "Customer Type",
         "customer": "Customer",
         "saling": "Saling",
-        "sale": "Product Saling"
+        "sale": "Product Saling",
+        "sale_payment_receipt": "Sale Payment Receipt"
     },
     "columns": {
         "name": "Name",
@@ -133,6 +134,9 @@
         "total_paid_amount": "Total Paid Amount",
         "subtotal": "Subtotal",
         "grand_total": "Grand Total",
-        "pay_now": "Pay now"
+        "pay_now": "Pay now",
+        "invoice": "Invoice",
+        "amount": "Amount",
+        "payment_history": "Payment History"
     }
 }
