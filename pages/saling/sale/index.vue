@@ -5,20 +5,32 @@
       :page-header-options="{
         pageTitle: 'menu.sale',
         breadcrumbs: breadcrumbs,
-        actions: [
+        rightActions: [
           {
             title: 'scanning',
             color: 'success',
             icon: 'fluent:barcode-scanner-16-filled',
             onClick: handleScanning,
-          }
+          },
+          {
+            title: 'create',
+            color: 'primary',
+            icon: 'icons8:plus',
+            onClick: handleCreating,
+          },
         ]
       }"
       crud-path="admin/saling/sale"
       :headers="headers"
       :table-options="options"
       :show-create-button="false"
+      is-item-printable
     >
+      <template #printable="{ printItem }">
+        <SalePrint
+          :item="printItem"
+        />
+      </template>
       <template #form="{ formRef }">
         <SaleForm :form-ref="formRef"/>
       </template>
@@ -171,5 +183,9 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
 
   const handleScanning = () => {
     alert('Yes')
+  }
+
+  const handleCreating = () => {
+    navigateTo('/saling/sale/create');
   }
 </script>
