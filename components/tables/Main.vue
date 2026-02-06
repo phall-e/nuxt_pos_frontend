@@ -28,6 +28,14 @@
             <Icon name="iconamoon:search"/>
           </template>
         </el-input>
+        <template v-if="pageHeaderOptions?.rightActions?.length">
+          <el-button
+            v-for="item in pageHeaderOptions?.rightActions"
+            :key="item.title"
+            :type="item.color"
+            @click="item.onClick"
+          ><Icon :size="20" :name="item.icon"/>&nbsp;{{ $t(item.title) }}</el-button>
+        </template>
         <el-button
           v-if="showCreateButton"
           type="primary"

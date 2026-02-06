@@ -8,5 +8,6 @@ export interface IButtonAction {
 export interface IPageHeaderOption {
     pageTitle: string
     breadcrumbs?: string[]
-    actions?: IButtonAction[]
+    actions?: IButtonAction[],
+    rightActions?: IButtonAction[],
 }
