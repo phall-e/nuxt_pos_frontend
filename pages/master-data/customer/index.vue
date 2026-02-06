@@ -14,7 +14,7 @@
         <CustomerForm :form-ref="formRef"/>
       </template>
       <template #item.createdBy="{ item }">
-        {{ item?.createdBy.username }}
+        {{ item?.createdBy?.username }}
       </template>
       <template #item.createdAt="{ item }">
         {{ dateFormatter(item.createdAt) }}
