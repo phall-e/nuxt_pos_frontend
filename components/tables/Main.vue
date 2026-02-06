@@ -71,7 +71,12 @@
             </template>
           </el-table-column>
         </template>
-        <el-table-column v-if="showActionButton" fixed="right" width="170" :label="$t('columns.action')">
+        <el-table-column 
+          v-if="showActionButton" 
+          fixed="right" 
+          :width="actionWidth" 
+          :label="$t('columns.action')"
+        >
           <template #default="scope">
             <div class="flex items-center justify-center gap-2">
               <slot
@@ -79,7 +84,14 @@
                 :row="scope.row"
                 :index="scope.$index"
               />
-
+              <el-tag
+                v-if="isItemPrintable"
+                type="primary"
+                class="cursor-pointer"
+                @click="itemPrinting(scope.row.id)"
+              >
+                <Icon name="fluent:print-20-regular"/>
+              </el-tag>
               <el-tag
                 type="primary"
                 class="cursor-pointer"
@@ -167,6 +179,16 @@
         </el-button>
       </template>
     </el-dialog>
+
+
+    <!-- Document Printing -->
+    <div class="fixed inset-0 z-50 bg-white hidden print:block">
+      <slot 
+        v-if="printItem"
+        name="printable" 
+        :print-item="printItem"
+      />
+    </div>
   </div>
 </template>
 
@@ -216,6 +238,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  isItemPrintable: {
+    type: Boolean,
+    default: false,
+  },
   showActionButton: {
     type: Boolean,
     default: true,
@@ -231,8 +257,23 @@ const {
   showCreateButton,
   isItemEditable,
   isItemRemovable,
+  isItemPrintable,
   showActionButton,
 } = props;
+
+const slots = useSlots()
+
+const actionWidth = computed(() => {
+  let width = 40
+
+  if (isItemEditable) width += 40
+  if (isItemRemovable) width += 40
+  if (isItemPrintable) width += 40
+  if (slots['item.action-button']) width += 40
+
+  return width
+})
+
 
 const itemPerPages = ref<number[]>([
   10,
@@ -442,6 +483,30 @@ watch(() => [isOpenDialog], () => {
     });
   }
 }, { deep: true });
+
+// Document printing
+const itemPrintLoading = ref<boolean>(false);
+const printItem = ref<any>(null);
+const itemPrinting = async(id: number) => {
+  itemPrintLoading.value = true;
+  try {
+    const response: any = await useApi(`${crudPath}/${id}`);
+    printItem.value = response.payload;
+  } catch (error: any) {
+    const message =
+          error?.data?.message ||
+          error?.message ||
+          'Something went wrong'
+  } finally {
+    itemPrintLoading.value = false;
+  }
+}
+
+watch(printItem, (val) => {
+  if (val) {
+    nextTick(() => window.print())
+  }
+});
 
 defineExpose({ 
   refreshList,
