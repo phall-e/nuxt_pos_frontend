@@ -7,10 +7,10 @@
       @submit.prevent="handleSubmit"
       class="w-[98%] md:w-[25%] border p-2 rounded-sm"
     >
-      <div class="w-full flex items-center justify-center flex-col md-5">
+      <div class="w-full flex items-center justify-center flex-col mb-8 mt-4">
         <el-image
           :src="logo"
-          class="h-[120px]"
+          class="h-[80px]"
         />
       </div>
       <el-form-item
