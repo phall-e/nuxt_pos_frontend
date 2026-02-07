@@ -151,6 +151,7 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
       totalDiscount: 0,
       totalNetAmount: 0,
       attachments: [],
+      isPayNow: true,
       items: [
         {
           id: null,

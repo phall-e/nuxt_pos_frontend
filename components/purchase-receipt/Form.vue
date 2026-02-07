@@ -135,6 +135,7 @@
           :placeholder="$t('columns.choose')"
           filterable
           clearable
+          disabled
         >
           <el-option 
             v-for="item in suppliers" 
@@ -160,7 +161,7 @@
         />
       </el-form-item>
     </el-col>
-    <el-col :md="16">
+    <el-col :md="8">
       <el-form-item
         :label="$t('columns.receipt_ref')"
         prop="receiptRef"
@@ -170,6 +171,14 @@
           v-model="formRef.receiptRef"
           :placeholder="$t('columns.receipt_ref')"
         />
+      </el-form-item>
+    </el-col>
+    <el-col :md="8">
+      <el-form-item
+        :label="$t('columns.pay_now')"
+        prop="isPayNow"
+      >
+        <el-checkbox v-model="formRef.isPayNow" :label="$t('columns.pay_now')"/>
       </el-form-item>
     </el-col> 
     <el-col :md="8">
