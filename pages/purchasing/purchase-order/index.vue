@@ -10,7 +10,13 @@
       crud-path="admin/purchasing/purchase-order"
       :headers="headers"
       :table-options="options"
+      is-item-printable
     >
+      <template #printable="{ printItem }">
+        <PurchaseOrderPrint
+          :item="printItem"
+        />
+      </template>
       <template #form="{ formRef }">
         <PurchaseOrderForm :form-ref="formRef"/>
       </template>
