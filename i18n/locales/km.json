@@ -67,7 +67,8 @@
         "customer": "អតិថិជន",
         "saling": "ការលក់",
         "sale": "លក់ទំនិញ",
-        "sale_payment_receipt": "ទទួលប្រាក់ពីអតិថិជន"
+        "sale_payment_receipt": "ទទួលប្រាក់ពីអតិថិជន",
+        "purchase_receipt_billing": "ទូរទាត់ប្រាក់ទៅអ្នកផ្គត់ផ្គង់"
     },
     "columns": {
         "name": "ឈ្មោះ",
@@ -137,6 +138,8 @@
         "pay_now": "ទូទាត់ឥឡូវ",
         "invoice": "លេខវិក្ក័យប័ត្រ",
         "amount": "ទឹកប្រាក់",
-        "payment_history": "ប្រវត្តិបង់ប្រាក់"
+        "payment_history": "ប្រវត្តិបង់ប្រាក់",
+        "billing_date": "ថ្ងៃទូរទាត់",
+        "billing_by": "ទូរទាត់ដោយ"
     }
 }

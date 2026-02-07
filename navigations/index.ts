@@ -68,6 +68,12 @@ const navigationItems: NavigationItem[] = [
         moduleName: 'purchase-receipt',
     },
     {
+        title: 'menu.purchase_receipt_billing',
+        icon: 'mdi:invoice-text-edit-outline',
+        to: '/purchasing/purchase-receipt-billing',
+        moduleName: 'purchase-receipt-billing',
+    },
+    {
         title: 'menu.stock',
         icon: 'lucide:store',
         to: '/stocking/stock',

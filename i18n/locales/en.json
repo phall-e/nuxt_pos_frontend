@@ -67,7 +67,8 @@
         "customer": "Customer",
         "saling": "Saling",
         "sale": "Product Saling",
-        "sale_payment_receipt": "Sale Payment Receipt"
+        "sale_payment_receipt": "Sale Payment Receipt",
+        "purchase_receipt_billing": "Purchase Receipt Billing"
     },
     "columns": {
         "name": "Name",
@@ -137,6 +138,8 @@
         "pay_now": "Pay now",
         "invoice": "Invoice",
         "amount": "Amount",
-        "payment_history": "Payment History"
+        "payment_history": "Payment History",
+        "billing_date": "Billing Date",
+        "billing_by": "Billing By"
     }
 }
