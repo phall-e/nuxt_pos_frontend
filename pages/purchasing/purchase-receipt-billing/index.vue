@@ -21,6 +21,9 @@
       <template #item.billingBy="{ item }">
         {{ item?.billingBy.username }}
       </template>
+      <template #item.supplier="{ item }">
+        {{ item?.purchaseReceipt.supplier.nameKh }}
+      </template>
       <template #item.createdBy="{ item }">
         {{ item?.createdBy.username }}
       </template>
@@ -69,6 +72,10 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
       title: 'columns.billing_date',
       key: 'billingDate',
     }, 
+    {
+      title: 'menu.supplier',
+      key: 'supplier',
+    },
     {
       title: 'columns.billing_by',
       key: 'billingBy',
