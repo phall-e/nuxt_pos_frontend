@@ -164,7 +164,9 @@
       </el-form>
 
       <template #footer>
-        <el-button>{{ $t('cancel') }}</el-button>
+        <el-button
+          @click="isOpenDialog = false"
+        >{{ $t('cancel') }}</el-button>
         <el-button 
           type="primary" 
           :disabled="crudLoading"
