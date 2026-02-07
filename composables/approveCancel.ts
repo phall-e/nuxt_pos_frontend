@@ -11,7 +11,9 @@ export const useApproveCancel = (url: string, feature: string) => {
         draggable: true,
         type: 'warning',
         center: true,
+        customClass: 'font-Nokora',
       },
+      
     )
     .then( async() => {
       try {
@@ -41,6 +43,7 @@ export const useApproveCancel = (url: string, feature: string) => {
       {
         confirmButtonText: $t('ok'),
         cancelButtonText: $t('cancel'),
+        customClass: 'font-Nokora',
       })
       .then( async({ value }) => {
         try {

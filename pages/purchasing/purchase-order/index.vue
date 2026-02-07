@@ -47,8 +47,22 @@
           </el-tag>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-can="'approve-purchase-receipt'" v-if="row.status === ModuleStatus.PENDING" @click="handleApprove(row, refreshList)">{{ $t('approve') }}</el-dropdown-item>
-              <el-dropdown-item v-can="'cancel-purchase-receipt'" v-if="row.status === ModuleStatus.PENDING" @click="handleCancel(row, refreshList)">{{ $t('cancel') }}</el-dropdown-item>
+              <el-dropdown-item
+                class="font-Nokora" 
+                v-can="'approve-purchase-receipt'" 
+                v-if="row.status === ModuleStatus.PENDING" 
+                @click="handleApprove(row, refreshList)"
+              >
+                {{ $t('approve') }}
+              </el-dropdown-item>
+              <el-dropdown-item
+                class="font-Nokora" 
+                v-can="'cancel-purchase-receipt'" 
+                v-if="row.status === ModuleStatus.PENDING" 
+                @click="handleCancel(row, refreshList)"
+              >
+                {{ $t('cancel') }}
+              </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
