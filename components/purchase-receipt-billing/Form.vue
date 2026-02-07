@@ -411,7 +411,7 @@ import statuses from '~/types/Status';
           formRef.purchaseReceiptId = null;
         }
         const response: any = await useApi(
-          `admin/purchasing/purchase-receipt/select-options/${branchId}/${dialogState.dialogState === CrudDialogState.CREATE ? 'true' : 'false'}`
+          `admin/purchasing/purchase-receipt/select-options/billing/${branchId}/${dialogState.dialogState === CrudDialogState.CREATE ? 'false' : 'true'}`
         );
         purchaseReceiptOptions.value = response.payload;
       },
