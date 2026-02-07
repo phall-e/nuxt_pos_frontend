@@ -140,6 +140,7 @@
         "amount": "Amount",
         "payment_history": "Payment History",
         "billing_date": "Billing Date",
-        "billing_by": "Billing By"
+        "billing_by": "Billing By",
+        "is_in_stock": "Is In Stock"
     }
 }

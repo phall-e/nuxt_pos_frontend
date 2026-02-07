@@ -10,12 +10,27 @@
       crud-path="admin/purchasing/purchase-receipt"
       :headers="headers"
       :table-options="options"
+      is-item-printable
     >
+      <template #printable="{ printItem }">
+        <PurchaseReceiptPrint
+          :item="printItem"
+        />
+      </template>
       <template #form="{ formRef }">
         <PurchaseReceiptForm :form-ref="formRef"/>
       </template>
       <template #item.status="{ item }">
         <StatusModuleStatus :status="item.status"/>
+      </template>
+      <template #item.isInStock="{ item }">
+        <Icon
+          v-if="item.isInStock === true"
+          name="bitcoin-icons:verify-outline"
+          :size="22"
+          class="text-green-400"
+        />
+        <span v-else></span>
       </template>
       <template #item.branch="{ item }">
         {{ item?.branch.nameEn }}
@@ -91,6 +106,10 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
     {
       title: 'columns.status',
       key: 'status',
+    }, 
+    {
+      title: 'columns.is_in_stock',
+      key: 'isInStock',
     }, 
     {
       title: 'menu.branch',
