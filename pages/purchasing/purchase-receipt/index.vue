@@ -56,6 +56,9 @@
       <template #item.totalNetAmount="{ item }">
         {{ formatCurrencyUSD(item.totalNetAmount) }}
       </template>
+      <template #item.totalPaidAmount="{ item }">
+        {{ formatCurrencyUSD(item.totalPaidAmount) }}
+      </template>
       <template #item.action-button="{ row, index }">
         <el-dropdown>
           <el-tag
@@ -65,14 +68,14 @@
           </el-tag>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item 
+              <!-- <el-dropdown-item 
                 class="font-Nokora"
                 v-can="'approve-purchase-receipt'" 
                 v-if="row.status === ModuleStatus.PENDING" 
                 @click="handleApprove(row, refreshList)"
               >
                 {{ $t('approve') }}
-              </el-dropdown-item>
+              </el-dropdown-item> -->
               <el-dropdown-item 
                 class="font-Nokora"
                 v-can="'cancel-purchase-receipt'" 
@@ -150,6 +153,10 @@ import type { UseCrudOption } from '~/types/UseCrudOption';
     {
       title: 'columns.total_net_amount',
       key: 'totalNetAmount',
+    },
+    {
+      title: 'columns.total_paid_amount',
+      key: 'totalPaidAmount',
     },
     {
       title: 'columns.created_by',
