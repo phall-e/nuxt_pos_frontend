@@ -431,7 +431,7 @@ import { CrudDialogState } from '~/types/crud-dialog-state.type';
         }
 
         const response: any = await useApi(
-          `admin/purchasing/purchase-receipt/select-options/${branchId}/${dialogState.dialogState === CrudDialogState.CREATE ? 'true' : 'false'}`
+          `admin/purchasing/purchase-receipt/select-options/stock/${branchId}/${dialogState.dialogState === CrudDialogState.CREATE ? 'true' : 'false'}`
         );
         purchaseReceipts.value = response.payload;
         console.log(response);
