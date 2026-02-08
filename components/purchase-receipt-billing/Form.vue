@@ -263,7 +263,7 @@
       >
         <el-input 
           v-model="formRef.note"
-          :placeholder="$t('note')"
+          :placeholder="$t('columns.note')"
         />
       </el-form-item>
     </el-col>
