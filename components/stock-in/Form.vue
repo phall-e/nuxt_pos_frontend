@@ -344,23 +344,6 @@
           >
             <template #default="scope">
               <el-form-item
-                :prop="`items.${scope.$index}.receiptQuantity`"
-                :rules="[{ required: true }]"
-              >
-                <el-input
-                  v-model="scope.row.receiptQuantity"
-                  type="number"
-                  placeholder="0"
-                  readonly
-                />
-              </el-form-item>
-            </template>
-          </el-table-column>
-          <el-table-column
-            :label="$t('columns.stock_in_quantity')"
-          >
-            <template #default="scope">
-              <el-form-item
                 :prop="`items.${scope.$index}.quantity`"
                 :rules="[{ required: true }]"
               >
@@ -461,8 +444,7 @@ import { CrudDialogState } from '~/types/crud-dialog-state.type';
                     unitPrice: item.product?.unitPrice,
                     category: item.product?.category.nameKh,
                     uom: item.product?.uom.nameKh,
-                    receiptQuantity: item.quantity,
-                    quantity: Number(item.quantity) * Number(item.product.uom.quantity),
+                    quantity: Number(item.quantity),
                   }))
                 : [],
             })
