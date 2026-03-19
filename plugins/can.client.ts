@@ -8,6 +8,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (!permission.can(binding.value)) {
           el.style.display = 'none'
         }
+      } else {
+        el.style.display = 'block'
       }
     },
 

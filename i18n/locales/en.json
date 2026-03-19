@@ -43,6 +43,7 @@
     "logout": "Logout",
     "scanning": "Scanning",
     "menu": {
+        "dashboard": "Dashboard",
         "system": "System",
         "master_data": "Master Data",
         "user": "User",

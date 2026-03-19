@@ -2,6 +2,11 @@ import type { NavigationItem } from "~/types/NavigationItem";
 
 const navigationItems: NavigationItem[] = [
     {
+        title: 'menu.dashboard',
+        icon: 'fluent-mdl2:b-i-dashboard',
+        to: '/',
+    },
+    {
         title: 'menu.branch',
         icon: 'map:store',
         to: '/master-data/branch',
