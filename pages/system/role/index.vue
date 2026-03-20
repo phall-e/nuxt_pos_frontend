@@ -1,21 +1,30 @@
-<!-- <template>
+<template>
     <TablesMain
-        module-name="role"
-        title="role"
-        crud-path="admin/system/users"
-        :breadcrums="breadcrums"
-        :headers="headers"
-    />
+       module-name="user"
+      :page-header-options="{
+        pageTitle: 'menu.role',
+        breadcrumbs: breadcrumbs
+      }"
+      crud-path="admin/system/roles"
+      :headers="headers"
+      :table-options="options"
+      ref="listRef"
+    >
+      <template #form="{ formRef }">
+        <RoleForm :form-ref="formRef"/>
+      </template>
+    </TablesMain>
 </template>
 
 <script setup lang="ts">
 import type { Headers } from '~/types/header.type';
+import type { UseCrudOption } from '~/types/UseCrudOption';
 
     definePageMeta({
-        permissions: ['read-stock-in'],
+      permissions: ['read-role'],
     });
 
-    const breadcrums = ['system', 'role', 'list'];
+    const breadcrumbs = ['system', 'role', 'list'];
     const headers: Headers[] = [
     {
       title: 'columns.name',
@@ -27,7 +36,20 @@ import type { Headers } from '~/types/header.type';
       key: 'description',
       width: 400,
     },    
-  ]
-</script> -->
+  ];
 
-<template></template>
+  const options: UseCrudOption = {
+    defaultCreateValue: {
+      permissions: [],
+    },
+    mapEditValue: (data: any) => (console.log(data), {
+      ...data,
+      permissions: data.permissions && data.permissions.length > 0 ?
+        data.permissions.map((item: any) => item.id)
+        : [],
+    }),
+    dialogOptions: {
+      fullscreen: true,
+    }
+  }
+</script>

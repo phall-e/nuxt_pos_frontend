@@ -120,6 +120,12 @@ const navigationItems: NavigationItem[] = [
         to: '/system/user',
         moduleName: 'user',
     },
+    {
+        title: 'menu.role',
+        icon: 'proicons:lock',
+        to: '/system/role',
+        moduleName: 'role',
+    },
 ];
 
 export default navigationItems;
