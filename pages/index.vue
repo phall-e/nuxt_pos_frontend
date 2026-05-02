@@ -120,45 +120,18 @@
             label-position="top"
           >
             <el-row :gutter="10">
-              <el-col :span="8">
-                <el-form-item
-                  :label="$t('menu.branch')"
-                  prop="branchId"
-                  :rules="[
-                    { required: true, }
-                  ]"
-                >
-                  <el-select 
-                    v-model="saleSummaryByMonthFormData.branchId"
-                    :placeholder="$t('columns.choose')"
-                    filterable
-                    clearable
-                  >
-                    <el-option 
-                      v-for="item in branches" 
-                      :key="item.id" 
-                      :label="item.nameEn+'-'+item.nameKh" 
-                      :value="item.id"
-                      class="font-Nokora"
-                    />
-                  </el-select>
-                </el-form-item>
-              </el-col>
               <el-col :span="16">
                 <el-form-item
-                  :label="$t('menu.date')"
-                  prop="dateRange"
+                  :label="$t('columns.year')"
+                  prop="saleSummaryYear"
                   :rules="[
                     { required: true, }
                   ]"
                 >
                   <el-date-picker
-                    v-model="saleSummaryByMonthFormData.dateRange"
-                    type="daterange"
-                    unlink-panels
-                    range-separator="To"
-                    start-placeholder="Start date"
-                    end-placeholder="End date"
+                    v-model="saleSummaryByMonthFormData.saleSummaryYear"
+                    type="year"
+                    @change="saleSummaryByYear"
                   />
                 </el-form-item>
               </el-col>
@@ -166,6 +139,7 @@
           </el-form>
         </div>
         <ChartsBaseChart 
+          v-if="!saleSummaryByYearLoading"
           :config="chartSaleByMonthConfig" 
           class="w-full"
         />
@@ -290,6 +264,10 @@
         summaryCounts.value.totalSaleAmount = data.saleGrandTotalAmount;
         summaryCounts.value.totalExpense = data.totalExpense;
         summaryCounts.value.totalSupplier = data.totalAmountPayToSupplier;
+        summaryCounts.value.totalBranch = data.totalBranch;
+        summaryCounts.value.totalUser = data.totalUser;
+        summaryCounts.value.totalSupplier = data.totalSupplier;
+        summaryCounts.value.totalCustomer = data.totalCustomer;
       }
     } catch (error: any) {  
       console.log(error);
@@ -302,43 +280,58 @@
   const saleSummaryByMonthFormData = ref({
     branchId: null,
     dateRange: null,
+    saleSummaryYear: Date.now(),
   });
 
-  const chartSaleByMonthConfig: ChartConfiguration = {
-    type: 'bar',
-    data: {
-      labels: ['មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា', 'កក្កដា', 'សីហា', 'កញ្ញា', 'តុលា', 'វិច្ឆិកា', 'ធ្នូ'],
-      datasets: [
-        {
-          label: 'ការលក់',
-          data: [1200, 1900, 800, 1600, 1500, 2556, 434, 1323, 3233, 1500, 333, 1200],
-          // 👇 color per bar
-          backgroundColor: [
-            '#ffdee7', // Jan - blue
-            '#fcead8', // Feb - green
-            '#fff4dc', // Mar - orange
-            '#daf2f2', // Apr - red
-            '#d7eaf9',
-            '#ecdefe',
-            '#ffdee7',
-            '#daf2f2',
-          ],
+// const now = new Date();
 
-          borderColor: [
-            '#ff6b8a',
-            '#ffc480',
-            '#ffd562',
-            '#90d9da',
-            '#60b6f2',
-            '#c1a0f7',
-            '#ff6b8a',
-            '#90d9da',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
+// saleSummaryByMonthFormData.value = {
+//   branchId: null,
+//   dateRange: null,
+//   saleSummaryYear: now.getFullYear(), // current year
+// };
+
+  const saleSummaryByYearLoading = ref<boolean>(true);
+  const saleSummaryByYearData = ref<any>([]);
+  const saleSummaryByYear = async() => {
+    try {
+      saleSummaryByYearLoading.value = true;
+      const response: any = await useApi(`admin/saling/sale/summary-by-year?year=${saleSummaryByMonthFormData.value.saleSummaryYear}`);
+      console.log('Data', response);
+      saleSummaryByYearData.value = response.payload.data;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      saleSummaryByYearLoading.value = false;
+    }
+  }
+
+  const chartSaleByMonthConfig = computed<ChartConfiguration>(() => ({
+  type: 'bar',
+  data: {
+    labels: [
+      'មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា',
+      'កក្កដា', 'សីហា', 'កញ្ញា', 'តុលា', 'វិច្ឆិកា', 'ធ្នូ'
+    ],
+    datasets: [
+      {
+        label: 'ការលក់',
+        data: saleSummaryByYearData.value, // ✅ reactive now
+        backgroundColor: [
+          '#ffdee7','#fcead8','#fff4dc','#daf2f2',
+          '#d7eaf9','#ecdefe','#ffdee7','#daf2f2',
+          '#fcead8','#fff4dc','#d7eaf9','#ecdefe',
+        ],
+        borderColor: [
+          '#ff6b8a','#ffc480','#ffd562','#90d9da',
+          '#60b6f2','#c1a0f7','#ff6b8a','#90d9da',
+          '#ffc480','#ffd562','#60b6f2','#c1a0f7',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
       responsive: true,
       plugins: {
         legend: {
@@ -378,7 +371,83 @@
         },
       },
     },
-  };
+}));
+
+  // const chartSaleByMonthConfig: ChartConfiguration = {
+  //   type: 'bar',
+  //   data: {
+  //     labels: ['មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា', 'កក្កដា', 'សីហា', 'កញ្ញា', 'តុលា', 'វិច្ឆិកា', 'ធ្នូ'],
+  //     datasets: [
+  //       {
+  //         label: 'ការលក់',
+  //         data: saleSummaryByYearData.value,
+  //         // 👇 color per bar
+  //         backgroundColor: [
+  //           '#ffdee7', // Jan - blue
+  //           '#fcead8', // Feb - green
+  //           '#fff4dc', // Mar - orange
+  //           '#daf2f2', // Apr - red
+  //           '#d7eaf9',
+  //           '#ecdefe',
+  //           '#ffdee7',
+  //           '#daf2f2',
+  //         ],
+
+  //         borderColor: [
+  //           '#ff6b8a',
+  //           '#ffc480',
+  //           '#ffd562',
+  //           '#90d9da',
+  //           '#60b6f2',
+  //           '#c1a0f7',
+  //           '#ff6b8a',
+  //           '#90d9da',
+  //         ],
+  //         borderWidth: 1,
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     responsive: true,
+  //     plugins: {
+  //       legend: {
+  //         labels: {
+  //           font: {
+  //             family: 'Nokora',
+  //             size: 14,
+  //             weight: 'bold',
+  //           },
+  //         },
+  //       },
+  //       tooltip: {
+  //         bodyFont: {
+  //           family: 'Nokora',
+  //         },
+  //         titleFont: {
+  //           family: 'Nokora',
+  //         },
+  //       },
+  //     },
+  //     scales: {
+  //       x: {
+  //         ticks: {
+  //           font: {
+  //             family: 'Nokora',
+  //             size: 12,
+  //           },
+  //         },
+  //       },
+  //       y: {
+  //         ticks: {
+  //           font: {
+  //             family: 'Nokora',
+  //             size: 12,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // };
 
   // Summary by branch
   const chartSummaryByBranchConfig: ChartConfiguration = {
@@ -446,6 +515,7 @@
 
   onMounted(() => {
     getSummaryCount();
+    saleSummaryByYear();
   })
 
 </script>

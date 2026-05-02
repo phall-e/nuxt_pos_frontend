@@ -142,6 +142,7 @@
         "payment_history": "ប្រវត្តិបង់ប្រាក់",
         "billing_date": "ថ្ងៃទូទាត់",
         "billing_by": "ទូទាត់ដោយ",
-        "is_in_stock": "បានចូលស្តុក"
+        "is_in_stock": "បានចូលស្តុក",
+        "year": "ឆ្នាំ"
     }
 }
